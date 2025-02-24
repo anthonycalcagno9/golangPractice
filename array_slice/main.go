@@ -86,4 +86,18 @@ func main() {
 	twoDimensionalSlice := [][]string{anthony, rafa}
 	fmt.Println(twoDimensionalSlice)
 
+	//when you want to copy a slice over to another slice you have to be careful
+	//since the slice is a pointer to an underlying array, you can have multiple slices
+	//pointing to the same memory address, so you will update both slices on accident
+	e := []int{0, 1, 2, 3, 4, 5, 6}
+	f := make([]int, 7)
+
+	copy(f, e)
+
+	fmt.Printf("slice f = %v\n", f)
+
+	e[0] = 15
+	fmt.Printf("slice e = %v\n", e)
+	fmt.Printf("slice f = %v\n", f)
+
 }
