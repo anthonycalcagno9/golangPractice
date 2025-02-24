@@ -1,0 +1,58 @@
+CREATE TABLE IF NOT EXISTS Armor (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    armor_type VARCHAR(16) NOT NULL,
+    defense INT NOT NULL,
+    fireRes INT NOT NULL,
+    waterRes INT NOT NULL,
+    lightningRes INT NOT NULL,
+    skill1 VARCHAR(30),
+    skill2 VARCHAR(30),
+    skill3 VARCHAR(30),
+    gemSlot1 INT,
+    gemSlot2 INT,
+    gemSlot3 INT
+);
+
+
+//INSERT EXAMPLE
+INSERT INTO armor (name, armor_type, defense, fireRes, waterRes, lightningRes, skill1, skill2, gemSlot1, gemSlot2)
+VALUES ('Rathalos', 'Head', 5, 10, 0, 2, 'critical eye', 'attack boost', 1, 2);
+
+INSERT INTO armor (name, armor_type, defense, fireRes, waterRes, lightningRes, skill1, skill2, skill3, gemSlot1, gemSlot2, gemSlot3)
+VALUES ('Gore Magala', 'Chest', 6, 4, 2, 8, 'critical boost', 'defense boost', 'stamina boost', 1, 2, 3);
+
+INSERT INTO armor (name, armor_type, defense, fireRes, waterRes, lightningRes, skill1, skill2, skill3, gemSlot1, gemSlot2, gemSlot3)
+VALUES ('Nergigante', 'Arms', 7, 8, 9, 3, 'critical boost', 'defense boost', 'stamina boost', 0, 3, 3);
+
+INSERT INTO armor (name, armor_type, defense, fireRes, waterRes, lightningRes, skill1, skill2, skill3, gemSlot1, gemSlot2, gemSlot3)
+VALUES ('Teostra', 'Waist', 10, 15, -10, 0, 'critical boost', 'defense boost', 'stamina boost', 3, 2, 3);
+
+INSERT INTO armor (name, armor_type, defense, fireRes, waterRes, lightningRes, skill1, skill2, skill3, gemSlot1, gemSlot2, gemSlot3)
+VALUES ('Kushala', 'Legs', 10, 0, 5, 15, 'critical boost', 'defense boost', 'stamina boost', 0, 0, 0);
+
+//Assigning Column alias
+SELECT name AS assigning_column_alias, armor_type AS assigning_column_alias_2
+FROM armor
+
+//Concatinating strings EXAMPLE
+SELECT
+    name || ' ' || defense
+FROM armor;
+
+SELECT skill1 || ' ' || skill2 AS Skills 
+FROM armor;
+
+//ORDER BY
+SELECT * FROM armor ORDER BY defense DESC;
+
+SELECT gemSlot3 FROM armor ORDER BY gemSlot3 NULLS FIRST;
+
+//SELECT DISTINCT - removes duplicates
+SELECT DISTINCT gemslot3 FROM armor;
+
+
+
+
+
+
