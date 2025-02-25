@@ -41,6 +41,14 @@ func main() {
 
 	p.speak()
 
+	fmt.Println("---------------------------------------------------------")
+	anonymousFunctionPractice()
+	fmt.Println("---------------------------------------------------------")
+
+	fmt.Println("**********************************************************")
+	callbacksPractice()
+	fmt.Println("**********************************************************")
+
 }
 
 //func (r receiver) identifier(p parameter(s)) (return(s)) {code}
