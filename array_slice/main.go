@@ -100,4 +100,17 @@ func main() {
 	fmt.Printf("slice e = %v\n", e)
 	fmt.Printf("slice f = %v\n", f)
 
+	g := []int{1, 2, 3, 4, 5, 6, 7}
+	h := make([]int, 7)
+
+	copy(h, g)
+
+	fmt.Printf("slice g = %v\n", g)
+	fmt.Printf("slice h = %v\n", h)
+
+	g[0] = 777
+
+	fmt.Printf("slice g = %v\n", g)
+	fmt.Printf("slice h = %v\n", h)
+
 }

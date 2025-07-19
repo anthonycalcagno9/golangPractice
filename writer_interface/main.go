@@ -65,3 +65,7 @@ func WriterInterfacePractice() {
 	fmt.Printf("Type of b.String() = %T and value = %v\n", b.String(), b.String())
 
 }
+
+func main() {
+	WriterInterfacePractice()
+}

@@ -11,6 +11,7 @@ func main() {
 	fmt.Println("Num of Go routines = ", runtime.NumGoroutine())
 
 	counter := 0
+	//var mu sync.Mutex // Add mutex to protect counter
 
 	const goal = 100
 
@@ -19,7 +20,9 @@ func main() {
 
 	for i := 0; i < goal; i++ {
 		go func() {
+			//mu.Lock() // Lock before accessing shared variable
 			counter++
+			//mu.Unlock() // Unlock after modifying shared variable
 			//runtime.Gosched()
 			wg.Done()
 		}()

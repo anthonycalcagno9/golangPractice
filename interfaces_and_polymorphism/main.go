@@ -61,7 +61,6 @@ func main() {
 	logInfo(n)
 
 	fmt.Println("------------------------------------------")
-	WriterInterfacePractice()
 
 }
 
