@@ -43,8 +43,8 @@ type Worker struct {
 }
 
 func main() {
-	cReceiver := make(chan<- int)
-	cSender := make(<-chan int)
+	cReceiver := make(chan<- int) //INCORRECT, THIS IS A SEND
+	cSender := make(<-chan int) //INCORRECT, THIS IS A RECEIVE
 	wg := sync.WaitGroup{}
 	jobCount := 10
 	workerCount := 3
